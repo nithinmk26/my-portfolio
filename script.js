@@ -1,6 +1,6 @@
 /* ===== DYNAMIC EXPERIENCE YEARS ===== */
-(function () {
-  const start = new Date(2019, 9, 12); // Oct 12, 2019
+document.addEventListener('DOMContentLoaded', function () {
+  const start = new Date(2019, 9, 12); // Oct 12, 2019 (month is 0-indexed)
   const now = new Date();
   const totalMonths =
     (now.getFullYear() - start.getFullYear()) * 12 +
@@ -10,7 +10,7 @@
   const formatted = months === 0 ? `${years}+` : `${years}.${months}+`;
   const el = document.getElementById('exp-years');
   if (el) el.textContent = formatted;
-})();
+});
 
 /* ===== NAVBAR SCROLL ===== */
 const navbar = document.getElementById('navbar');
