@@ -1,5 +1,5 @@
 /* ===== DYNAMIC EXPERIENCE YEARS ===== */
-document.addEventListener('DOMContentLoaded', function () {
+(function () {
   const start = new Date(2019, 9, 12); // Oct 12, 2019 (month is 0-indexed)
   const now = new Date();
   const totalMonths =
@@ -10,7 +10,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const formatted = months === 0 ? `${years}+` : `${years}.${months}+`;
   const el = document.getElementById('exp-years');
   if (el) el.textContent = formatted;
-});
+  else window.addEventListener('load', function () {
+    const el2 = document.getElementById('exp-years');
+    if (el2) el2.textContent = formatted;
+  });
+})();
 
 /* ===== NAVBAR SCROLL ===== */
 const navbar = document.getElementById('navbar');
