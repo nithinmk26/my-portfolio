@@ -1,21 +1,3 @@
-/* ===== DYNAMIC EXPERIENCE YEARS ===== */
-(function () {
-  const start = new Date(2019, 9, 12); // Oct 12, 2019 (month is 0-indexed)
-  const now = new Date();
-  const totalMonths =
-    (now.getFullYear() - start.getFullYear()) * 12 +
-    (now.getMonth() - start.getMonth());
-  const years = Math.floor(totalMonths / 12);
-  const months = totalMonths % 12;
-  const formatted = months === 0 ? `${years}+` : `${years}.${months}+`;
-  const el = document.getElementById('exp-years');
-  if (el) el.textContent = formatted;
-  else window.addEventListener('load', function () {
-    const el2 = document.getElementById('exp-years');
-    if (el2) el2.textContent = formatted;
-  });
-})();
-
 /* ===== NAVBAR SCROLL ===== */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
